@@ -44,7 +44,7 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 
-"
+" DO INSTALL ALL BUNDLES WITH :BundleInstall!
 "----------------- End Vundle --------------
 
 
