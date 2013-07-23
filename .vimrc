@@ -41,6 +41,8 @@ Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'davidhalter/jedi-vim'
 Bundle 'mattn/zencoding-vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 "
 "----------------- End Vundle --------------
@@ -85,6 +87,9 @@ set fileencoding=utf-8
 
 " --- PowerLine
 let g:Powerline_symbols = 'unicode' " require fontpatcher
+
+" EasyMotion
+let g:EasyMotion_do_shade = 0
 
 " NERDTree
 nmap <F5> :NERDTree<CR>
