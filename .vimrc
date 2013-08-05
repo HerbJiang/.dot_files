@@ -95,7 +95,12 @@ let g:EasyMotion_do_shade = 0
 nmap <F5> :NERDTree<CR>
 
 " DetectIndent
+"
 "autocmd BufReadPost * :DetectIndent 
+
+" Copy to Mac clipboard (current line for normal mode, selected text for visual mode)
+nmap <F2> :.w !pbcopy<CR><CR>
+vmap <F2> :w !pbcopy<CR><CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
