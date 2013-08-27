@@ -91,9 +91,6 @@ let g:Powerline_symbols = 'unicode' " require fontpatcher
 " EasyMotion
 let g:EasyMotion_do_shade = 0
 
-" NERDTree
-nmap <F5> :NERDTree<CR>
-
 " DetectIndent
 "
 "autocmd BufReadPost * :DetectIndent 
@@ -101,6 +98,16 @@ nmap <F5> :NERDTree<CR>
 " Copy to Mac clipboard (current line for normal mode, selected text for visual mode)
 nmap <F2> :.w !pbcopy<CR><CR>
 vmap <F2> :w !pbcopy<CR><CR>
+
+" Paste
+nmap <F3> :set paste!<CR>
+
+" SET LIST
+nmap <F4> :set list!<CR>
+set listchars=tab:>.,trail:.,extends:#,nbsp:.
+
+" NERDTree
+nmap <F5> :NERDTree<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
@@ -111,6 +118,3 @@ let g:tagbar_left=1
 "nnoremap <F8> :TlistToggle<CR>
 "
 "
-"set list
-nmap <F4> :set list!<CR>
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
