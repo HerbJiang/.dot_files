@@ -40,9 +40,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'honza/vim-snippets'
 Bundle 'garbas/vim-snipmate'
 Bundle 'davidhalter/jedi-vim'
-Bundle 'mattn/zencoding-vim'
 Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Bundle 'walm/jshint.vim'
+Bundle 'HerbJiang/vim-colorschemes'
 
 " DO INSTALL ALL BUNDLES WITH :BundleInstall!
 "----------------- End Vundle --------------
@@ -57,7 +57,7 @@ filetype indent on " enable loading the indent file for specific file types
 "set guifont=Menlo:h14
 "set guifont=Anonymous\ Pro\ for\ Powerline:h14
 syntax on
-colorscheme murphy
+colorscheme torte
 set cursorline
 set tabstop=4     " a tab is four spaces
 set expandtab
