@@ -29,19 +29,17 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'Lokaltog/powerline'
 Bundle 'airblade/vim-gitgutter'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle 'Townk/vim-autoclose'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'majutsushi/tagbar'
+"Bundle "MarcWeber/vim-addon-mw-utils"
+"Bundle "tomtom/tlib_vim"
+"Bundle 'Townk/vim-autoclose'
+"Bundle 'kien/ctrlp.vim'
+"Bundle 'scrooloose/nerdtree'
+"Bundle 'majutsushi/tagbar'
 Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'honza/vim-snippets'
-Bundle 'garbas/vim-snipmate'
-Bundle 'davidhalter/jedi-vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'walm/jshint.vim'
+Bundle 'AnsiEsc.vim'
+"Bundle 'davidhalter/jedi-vim'
+"Bundle 'walm/jshint.vim'
 Bundle 'HerbJiang/vim-colorschemes'
 
 " DO INSTALL ALL BUNDLES WITH :BundleInstall!
