@@ -1,0 +1,22 @@
+# Some alias
+_myos=`uname`
+case $_myos in
+    Darwin) alias duh='du -h -d 1';;
+    *) alias duh='du -h --max-depth=1';;
+esac
+
+alias mt=multitail
+
+export CLICOLOR=true
+export LSCOLORS='cxfxcxdxbxegedabagacad'
+
+
+# Some cool alias
+alias   l='ls -F'
+alias  ll='ls -F -lh|more'
+alias   L='ls -F     -L'
+alias  LL='ls -F -lh -L|more'
+alias  la='ls -F        -a'
+alias lla='ls -F -lh    -a|more'
+alias  ..='cd ..'
+

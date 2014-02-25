@@ -92,6 +92,7 @@ let g:EasyMotion_do_shade = 0
 " DetectIndent
 "
 "autocmd BufReadPost * :DetectIndent 
+let mapleader = ","
 
 " Copy to Mac clipboard (current line for normal mode, selected text for visual mode)
 nmap <F2> :.w !pbcopy<CR><CR>
@@ -105,11 +106,11 @@ nmap <F4> :set list!<CR>
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
 
 " NERDTree
-nmap <F5> :NERDTree<CR>
-
+" nmap <F5> :NERDTree<CR>
+ 
 " Tagbar
-nmap <F8> :TagbarToggle<CR>
-let g:tagbar_left=1
+" nmap <F8> :TagbarToggle<CR>
+" let g:tagbar_left=1
 
 " Taglist
 "let Tlist_Exit_OnlyWindow = 1
