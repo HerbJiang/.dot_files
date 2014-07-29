@@ -9,6 +9,7 @@ alias mt=multitail
 
 export CLICOLOR=true
 export LSCOLORS='cxfxcxdxbxegedabagacad'
+export EDITOR='/usr/local/bin/vim'
 
 
 # Some cool alias

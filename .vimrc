@@ -32,12 +32,14 @@ Bundle 'airblade/vim-gitgutter'
 "Bundle "MarcWeber/vim-addon-mw-utils"
 "Bundle "tomtom/tlib_vim"
 "Bundle 'Townk/vim-autoclose'
-"Bundle 'kien/ctrlp.vim'
+Bundle 'kien/ctrlp.vim'
 "Bundle 'scrooloose/nerdtree'
 "Bundle 'majutsushi/tagbar'
-Bundle 'tomtom/tcomment_vim'
+"Bundle 'scrooloose/syntastic'
+"Bundle 'tomtom/tcomment_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'AnsiEsc.vim'
+Bundle 'othree/eregex.vim'
 "Bundle 'davidhalter/jedi-vim'
 "Bundle 'walm/jshint.vim'
 Bundle 'HerbJiang/vim-colorschemes'
@@ -58,7 +60,7 @@ syntax on
 colorscheme torte
 set cursorline
 set tabstop=4     " a tab is four spaces
-set expandtab
+set expandtab     " expand tab with spaces
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
