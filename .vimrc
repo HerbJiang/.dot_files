@@ -81,6 +81,8 @@ set mouse=a
 set t_Co=256 
 set laststatus=2
 
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h16
+
 set encoding=utf-8
 set termencoding=utf-8
 set fileencoding=utf-8

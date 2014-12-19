@@ -81,6 +81,8 @@ var getScreenXYAdjustArray = function() {
 }
 
 var adjustXY = function(rect, incX, incY) {
+    if (typeof(rect) == 'undefined')
+        return {x:0, y:0, width: 400, height: 400};
     rect.x += incX; 
     rect.y += incY;
     return rect;
@@ -89,6 +91,8 @@ var adjustXY = function(rect, incX, incY) {
 // Operations
 //
 var throwWinToScr = function(win, toScr) {
+    if (typeof(win) == 'undefined' || typeof(win.rect()) == 'undefined')
+        return;
     var arr = getScreenXYAdjustArray();
     var fromId = win.screen().id(); 
     var toId = toScr.id();
@@ -181,8 +185,39 @@ var throwAllWindowToMainMonitor = function() {
     });
 }
 
+var printAllWindow = function() {
+    S.eachApp(function(appObj) {
+        appObj.eachWindow(function(winObj) {
+            S.log("app:" + appObj.name() + "/ win:" + winObj.title());
+        });
+    });
+}
+
+var t2center = function(winObj) { throwWinToScr(winObj, monAtCenter); }
+var t2left = function(winObj) { throwWinToScr(winObj, monAtLeft); }
+var t2right = function(winObj) { throwWinToScr(winObj, monAtRight); }
+
+var genEclipseHash = function() {
+  return {
+    "operations" : [function(windowObject) {
+      var title = windowObject.title();
+      if (title !== undefined && title != '') {
+        t2right(windowObject);
+      } else {
+        t2left(windowObject);
+      }
+    }],
+    "ignore-fail" : true,
+    "repeat" : true
+  };
+} 
+
 // 3 monitor layout
 var threeMonitorLayout = S.lay("threeMonitor", {
+  "Eclipse" : genEclipseHash(),
+  "Google Chrome": { "operations": [t2left], "ignore-fail": true, "repeat": true },
+  "iTerm": { "operations": [t2right], "ignore-fail": true, "repeat": true },
+  "Aurora": { "operations": [t2center], "ignore-fail": true, "repeat": true },
 });
 
 // 1 monitor layout
@@ -205,9 +240,9 @@ var universalLayout = function() {
   // Should probably make sure the resolutions match but w/e
   S.log("SCREEN COUNT: "+S.screenCount());
   if (S.screenCount() === 3) {
-      S.log("Left:" + monAtLeft.id() + ":" + monAtLeft.isMain());
-      S.log("Center:" + monAtCenter.id() + ":" + monAtLeft.isMain());
-      S.log("Right:" + monAtRight.id() + ":" + monAtLeft.isMain());
+//      S.log("Left:" + monAtLeft.id() + ":" + monAtLeft.isMain());
+//      S.log("Center:" + monAtCenter.id() + ":" + monAtLeft.isMain());
+//      S.log("Right:" + monAtRight.id() + ":" + monAtLeft.isMain());
     threeMonitor.run();
   } else if (S.screenCount() === 2) {
     twoMonitor.run();
@@ -235,6 +270,7 @@ S.bnda({
   "left:ctrl;alt" : function() { throwLCircle(S.window()); },
   "right:ctrl;alt" : function() { throwRCircle(S.window()); },
   ".:ctrl;alt;cmd" : throwAllWindowToMainMonitor,
+  ".:ctrl;shift;cmd" : universalLayout,
 
   // Resize Bindings
   // NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
