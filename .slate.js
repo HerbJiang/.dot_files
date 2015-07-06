@@ -167,6 +167,15 @@ var resizeCenter50 = function(win) {
     win.doOperation("resize", { "anchor": "bottom-right", "width": "-12.5%", "height": "-12.5%" });
 };
 
+var pushRight = slate.operation("push", {
+  "direction" : "right",
+  "style" : "bar-resize:screenSizeX*0.3"
+});
+var pushLeft = slate.operation("push", {
+  "direction" : "left",
+  "style" : "bar-resize:screenSizeX*0.7"
+});
+
 var throwAllWindowToMainMonitor = function() {
     var mainScr;
 
@@ -287,12 +296,10 @@ S.bnda({
 
   // Push Bindings
   // NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings
-  /*
-  "right:ctrl;shift" : S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX/2" }),
-  "left:ctrl;shift" : S.op("push", { "direction" : "left", "style" : "bar-resize:screenSizeX/2" }),
+  "right:ctrl;shift" : S.op("push", { "direction" : "right", "style" : "bar-resize:screenSizeX*0.4" }),
+  "left:ctrl;shift" : S.op("push", { "direction" : "left", "style" : "bar-resize:screenSizeX*0.6" }),
   "up:ctrl;shift" : S.op("push", { "direction" : "up", "style" : "bar-resize:screenSizeY/2" }),
   "down:ctrl;shift" : S.op("push", { "direction" : "down", "style" : "bar-resize:screenSizeY/2" }),
-  */
 
   // Nudge Bindings
   // NOTE: some of these may *not* work if you have not removed the expose/spaces/mission control bindings

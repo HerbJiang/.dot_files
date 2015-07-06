@@ -19,5 +19,6 @@ alias   L='ls -F     -L'
 alias  LL='ls -F -lh -L|more'
 alias  la='ls -F        -a'
 alias lla='ls -F -lh    -a|more'
+alias  lt='ls -F -lhtra   '
 alias  ..='cd ..'
 

@@ -80,6 +80,7 @@ set noswapfile
 set mouse=a
 set t_Co=256 
 set laststatus=2
+set clipboard=unnamed
 
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h16
 
