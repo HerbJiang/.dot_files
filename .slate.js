@@ -1,4 +1,4 @@
-var DEBUG = true;
+var DEBUG = false;
 
 if (DEBUG) S.log("[SLATE] -------------- Start Loading Config --------------");
 
@@ -226,7 +226,7 @@ var threeMonitorLayout = S.lay("threeMonitor", {
   "Eclipse" : genEclipseHash(),
   "Google Chrome": { "operations": [t2left], "ignore-fail": true, "repeat": true },
   "iTerm": { "operations": [t2right], "ignore-fail": true, "repeat": true },
-  "Aurora": { "operations": [t2center], "ignore-fail": true, "repeat": true },
+  "Firefox": { "operations": [t2center], "ignore-fail": true, "repeat": true },
 });
 
 // 1 monitor layout
@@ -234,11 +234,6 @@ var oneMonitorLayout = S.lay("oneMonitor", {
 });
 
 var twoMonitorLayout = oneMonitorLayout;
-
-// Defaults
-S.def(3, threeMonitorLayout);
-S.def(2, twoMonitorLayout);
-S.def(1, oneMonitorLayout);
 
 // Layout Operations
 var threeMonitor = S.op("layout", { "name" : threeMonitorLayout });
@@ -255,10 +250,17 @@ var universalLayout = function() {
     threeMonitor.run();
   } else if (S.screenCount() === 2) {
     twoMonitor.run();
+    throwAllWindowToMainMonitor();
   } else if (S.screenCount() === 1) {
     oneMonitor.run();
+    throwAllWindowToMainMonitor();
   }
 };
+
+// Defaults
+S.def(3, universalLayout);
+S.def(2, universalLayout);
+S.def(1, universalLayout);
 
 // Batch bind everything. Less typing.
 S.bnda({
